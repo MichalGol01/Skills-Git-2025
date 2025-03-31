@@ -7,10 +7,13 @@ public class TextController : MonoBehaviour {
 
 	public TextMeshPro gemCounter;
 	GameObject [] totalGems;
+	public TextMeshPro livesCounter;
+	int lives;
+	GameObject Hero;
 
 	// Use this for initialization
 	void Start () {
-		
+		Hero = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	// Update is called once per frame
@@ -18,6 +21,8 @@ public class TextController : MonoBehaviour {
 
 		totalGems = GameObject.FindGameObjectsWithTag ("redGem");
 		gemCounter.text = "Gems: " + totalGems.Length.ToString ();
+		lives = Hero.GetComponent<HeroMovement> ().lives;
+		livesCounter.text = "Lives:" + lives;
 
 	}
 }
