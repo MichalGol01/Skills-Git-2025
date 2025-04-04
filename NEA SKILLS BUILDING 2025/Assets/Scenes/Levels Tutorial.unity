@@ -1281,7 +1281,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4315970614403166, guid: f2de640d4a761344c87a73a1a9e58920, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 33.70673
+      value: 33.2
       objectReference: {fileID: 0}
     - target: {fileID: 4315970614403166, guid: f2de640d4a761344c87a73a1a9e58920, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1378,11 +1378,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4315970614403166, guid: f2de640d4a761344c87a73a1a9e58920, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 36.19
+      value: 36.66
       objectReference: {fileID: 0}
     - target: {fileID: 4315970614403166, guid: f2de640d4a761344c87a73a1a9e58920, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.06
+      value: -2.02
       objectReference: {fileID: 0}
     - target: {fileID: 4315970614403166, guid: f2de640d4a761344c87a73a1a9e58920, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1890,11 +1890,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4221328688412132, guid: a3a52bbc303dbd9499c56dd6c1d46854, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 20.848564
+      value: 20.99
       objectReference: {fileID: 0}
     - target: {fileID: 4221328688412132, guid: a3a52bbc303dbd9499c56dd6c1d46854, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.696313
+      value: -2.95
       objectReference: {fileID: 0}
     - target: {fileID: 4221328688412132, guid: a3a52bbc303dbd9499c56dd6c1d46854, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2595,6 +2595,7 @@ GameObject:
   - component: {fileID: 1498202964}
   - component: {fileID: 1498202963}
   - component: {fileID: 1498202967}
+  - component: {fileID: 1498202968}
   m_Layer: 0
   m_Name: hero
   m_TagString: Player
@@ -2710,6 +2711,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+--- !u!114 &1498202968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1498202962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6ade02b5aa5134db4b107d7e5f7887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alter: {fileID: 1838633790958122, guid: 5e03a8ca64c704c418d807f7566aced2, type: 2}
 --- !u!4 &1502106432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4395504713549706, guid: 10050f04b55cb7645818b6acb04688ad,
