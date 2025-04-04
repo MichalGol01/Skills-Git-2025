@@ -6,6 +6,9 @@ TagManager:
   tags:
   - redGem
   - extraLife
+  - extralife
+  - bomb
+  - trap
   layers:
   - Default
   - TransparentFX

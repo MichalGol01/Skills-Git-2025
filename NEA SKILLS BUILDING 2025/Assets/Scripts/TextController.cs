@@ -9,6 +9,8 @@ public class TextController : MonoBehaviour {
 	GameObject [] totalGems;
 	public TextMeshPro livesCounter;
 	int lives;
+	public TextMeshPro gameTimer;
+	string Timer;
 	GameObject Hero;
 
 	// Use this for initialization
@@ -23,6 +25,7 @@ public class TextController : MonoBehaviour {
 		gemCounter.text = "Gems: " + totalGems.Length.ToString ();
 		lives = Hero.GetComponent<HeroMovement> ().lives;
 		livesCounter.text = "Lives:" + lives;
+		gameTimer.text = "Time: " + Time.timeSinceLevelLoad.ToString("0.00");
 
 	}
 }
