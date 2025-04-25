@@ -9,6 +9,8 @@ TagManager:
   - extralife
   - bomb
   - trap
+  - leftMarker
+  - rightMarker
   layers:
   - Default
   - TransparentFX
