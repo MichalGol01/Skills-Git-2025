@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212761457913936458}
   - component: {fileID: 61794898184689254}
   m_Layer: 0
-  m_Name: bombStroked
+  m_Name: originalBomb
   m_TagString: bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
