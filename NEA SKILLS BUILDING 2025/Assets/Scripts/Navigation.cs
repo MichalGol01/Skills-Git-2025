@@ -9,6 +9,7 @@ public class Navigation : MonoBehaviour {
 	private Canvas mainCanvas;
 	public TextMeshPro timer;
 
+
 	public void ClickedButtonA(){
 
 		Debug.Log("Button A Clicked!");

@@ -8,7 +8,7 @@ public class bombSpawner : MonoBehaviour {
 
 	void Spawner(){
 
-		Instantiate (bomb, new Vector3 (27, 15, 0), Quaternion.identity);
+		Instantiate (bomb, new Vector3 (27, 9, 0), Quaternion.identity);
 	}
 
 	public void InvokeReapeating(){
