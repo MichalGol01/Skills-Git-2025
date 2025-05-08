@@ -35,6 +35,12 @@ public class HeroMovement : MonoBehaviour {
 		else if (other.gameObject.tag == "trap" && vulnerable == true) {
 			setLives ();
 		}
+		else if (other.gameObject.tag == "newBomb") {
+			Debug.Log ("Collision!!!");
+			ParticleSystem explosion = other.gameObject.GetComponent<ParticleSystem>();
+			explosion.Play();
+			Destroy (other.gameObject, explosion.main.duration/4);
+		}
 	}
 
 	public void setLives(){

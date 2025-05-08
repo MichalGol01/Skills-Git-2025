@@ -11,6 +11,7 @@ TagManager:
   - trap
   - leftMarker
   - rightMarker
+  - newBomb
   layers:
   - Default
   - TransparentFX
