@@ -10,6 +10,7 @@ public class HeroMovement : MonoBehaviour {
 	public int lives;
 	bool vulnerable;
 	SpriteRenderer m_SpriteRenderer;
+	SpriteRenderer o_SpriteRenderer;
 
 	IEnumerator VulnerableDeBuff() {
 		yield return new WaitForSeconds (5f);
@@ -39,7 +40,8 @@ public class HeroMovement : MonoBehaviour {
 			Debug.Log ("Collision!!!");
 			ParticleSystem explosion = other.gameObject.GetComponent<ParticleSystem>();
 			explosion.Play();
-			Destroy (other.gameObject, explosion.main.duration/4);
+			resetPosition ();
+			Destroy (other.gameObject, explosion.main.duration);
 		}
 	}
 
@@ -47,17 +49,26 @@ public class HeroMovement : MonoBehaviour {
 
 		lives -= 1;
 
-			if ( lives <= 0 || vulnerable == true)
+		if ( lives <= 0 || vulnerable == true )
 			{
 				Debug.Log("End  of Game");
 				SceneManager.LoadScene ("Lost");
 			}
 	}
 
-	void resetPosition() {
-		Debug.Log ("Spiked Recived!");
+	private void spawnDelay() {
+		m_SpriteRenderer.enabled = true;
 		transform.SetPositionAndRotation (new Vector3 (-5.49f, 0.8f, 0), Quaternion.identity);
 		setLives ();
+	}
+
+	void resetPosition() {
+		Debug.Log ("Died! LOL XD");
+		m_SpriteRenderer.enabled = false;
+		Invoke("spawnDelay", 2);
+		
+
+
 	}
 
 	void Start () {
@@ -66,6 +77,8 @@ public class HeroMovement : MonoBehaviour {
 		lives = 3;
 		vulnerable = false;
 		m_SpriteRenderer = GetComponent<SpriteRenderer>();
+
+
 
 	}
 	

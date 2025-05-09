@@ -24,6 +24,10 @@ public class SoundManager : MonoBehaviour {
 			
 			source.PlayOneShot (bomb, 1);
 		}
+		else if (other.gameObject.tag == "newBomb") {
+
+			source.PlayOneShot (bomb, 1);
+		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
