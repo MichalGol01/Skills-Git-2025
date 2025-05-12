@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HeroMovement : MonoBehaviour {
 
+	public GameObject MainCamera;
 	Rigidbody2D rb;
 	float speed;
 	public int lives;
@@ -69,6 +70,10 @@ public class HeroMovement : MonoBehaviour {
 		
 
 
+	}
+
+	void cameraFollow () {
+		MainCamera ();
 	}
 
 	void Start () {
