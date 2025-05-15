@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HeroMovement : MonoBehaviour {
 
+	public GameObject hero;
 	public GameObject MainCamera;
 	Rigidbody2D rb;
 	float speed;
@@ -12,6 +13,7 @@ public class HeroMovement : MonoBehaviour {
 	bool vulnerable;
 	SpriteRenderer m_SpriteRenderer;
 	SpriteRenderer o_SpriteRenderer;
+	Vector2 playerPos;
 
 	IEnumerator VulnerableDeBuff() {
 		yield return new WaitForSeconds (5f);
@@ -25,25 +27,28 @@ public class HeroMovement : MonoBehaviour {
 		if (other.gameObject.tag == "extraLife") {
 			lives += 1;
 			Destroy (other.gameObject);
-		}
-		else if (other.gameObject.tag == "bomb"){
+		} else if (other.gameObject.tag == "bomb") {
 			vulnerable = true;
 
 			m_SpriteRenderer.color = Color.red;
 			Debug.Log (vulnerable);
 			Destroy (other.gameObject);
 			StartCoroutine ("VulnerableDeBuff");
-		}
-		else if (other.gameObject.tag == "trap" && vulnerable == true) {
+		} else if (other.gameObject.tag == "trap" && vulnerable == true) {
 			setLives ();
-		}
-		else if (other.gameObject.tag == "newBomb") {
+		} else if (other.gameObject.tag == "newBomb") {
 			Debug.Log ("Collision!!!");
-			ParticleSystem explosion = other.gameObject.GetComponent<ParticleSystem>();
-			explosion.Play();
+			ParticleSystem explosion = other.gameObject.GetComponent<ParticleSystem> ();
+			explosion.Play ();
 			resetPosition ();
 			Destroy (other.gameObject, explosion.main.duration);
 		}
+		else if (other.gameObject.tag == "boundary") {
+			if (this.gameObject.tag == "MainCamera") {
+				MainCamera.transform.Translate (new Vector3.down * Time.deltaTime * speed, 0, 0);
+			}
+		}
+		
 	}
 
 	public void setLives(){
@@ -73,7 +78,9 @@ public class HeroMovement : MonoBehaviour {
 	}
 
 	void cameraFollow () {
-		MainCamera ();
+		hero = GameObject.Find("hero");
+		playerPos = hero.transform.position;
+		MainCamera.transform.SetPositionAndRotation (new Vector3 (playerPos.x, playerPos.y, -10), Quaternion.identity);
 	}
 
 	void Start () {
@@ -95,6 +102,9 @@ public class HeroMovement : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			rb.AddForce (Vector2.up * 300);
+
+
 		}
+		cameraFollow ();
 	}
 }

@@ -12,6 +12,7 @@ TagManager:
   - leftMarker
   - rightMarker
   - newBomb
+  - boundary
   layers:
   - Default
   - TransparentFX
