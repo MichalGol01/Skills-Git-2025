@@ -43,11 +43,7 @@ public class HeroMovement : MonoBehaviour {
 			resetPosition ();
 			Destroy (other.gameObject, explosion.main.duration);
 		}
-		else if (other.gameObject.tag == "boundary") {
-			if (this.gameObject.tag == "MainCamera") {
-				MainCamera.transform.Translate (new Vector3.down * Time.deltaTime * speed, 0, 0);
-			}
-		}
+			
 		
 	}
 
