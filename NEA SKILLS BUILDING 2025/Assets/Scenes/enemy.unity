@@ -2780,9 +2780,10 @@ GameObject:
   - component: {fileID: 1339791828}
   - component: {fileID: 1339791830}
   - component: {fileID: 1339791829}
+  - component: {fileID: 1339791831}
   m_Layer: 0
   m_Name: door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2858,6 +2859,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1339791831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1339791827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102d142fbdb9baa4889a6f04f237fced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Door: {fileID: 21300000, guid: ecee4c32158b14844a1d42e23f01cbb9, type: 3}
+  redDoor: {fileID: 21300000, guid: b8bc6a86bfdf40d47b21d0c15a49c1b0, type: 3}
+  greenDoor: {fileID: 21300000, guid: 0e1d1b78643f6e2458094843c650e878, type: 3}
+  orangeDoor: {fileID: 21300000, guid: 99af53a15b3bf9b4b942be99efc0b1a2, type: 3}
+  Doorext: {fileID: 0}
 --- !u!4 &1354515391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4307366272123364, guid: 67a5b2893f53e5a41a7d9b846bafb83e,
@@ -3218,6 +3235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feea9752a86726b42b88afa20cb78453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hero: {fileID: 0}
+  MainCamera: {fileID: 0}
   lives: 0
 --- !u!212 &2081629448
 SpriteRenderer:

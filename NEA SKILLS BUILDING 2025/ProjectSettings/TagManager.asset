@@ -13,6 +13,7 @@ TagManager:
   - rightMarker
   - newBomb
   - boundary
+  - Door
   layers:
   - Default
   - TransparentFX
